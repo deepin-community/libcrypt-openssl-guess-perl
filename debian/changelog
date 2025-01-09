@@ -1,5 +1,11 @@
-template-repository (1.0-1) unstable; urgency=medium
+libcrypt-openssl-guess-perl (0.15-2) unstable; urgency=medium
 
-  * Initial release
+  * No-change source-only re-upload.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- gregor herrmann <gregoa@debian.org>  Mon, 18 Jul 2022 23:17:59 +0200
+
+libcrypt-openssl-guess-perl (0.15-1) unstable; urgency=low
+
+  * Initial release (closes: #1014756).
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 11 Jul 2022 17:25:11 +0200

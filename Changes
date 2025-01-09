@@ -1,0 +1,37 @@
+Revision history for Perl extension Crypt-OpenSSL-Guess
+
+0.15 2022-02-11T08:52:23Z
+
+    - fix synopsis (PR#12 @skaji++)
+
+0.14 2021-10-28T15:35:02Z
+
+    - macOS: check dylib exists in library paths (PR#11)
+    - backport from Net::SSLeay 1.91_01 (PR#10)
+
+0.13 2021-05-03T15:37:39Z
+
+    - use --installed option while executing brew --prefix (PR#9 @skaji++)
+
+0.12 2021-03-05T08:54:55Z
+
+    - backport from Net::SSLeay 1.90 (PR#7)
+    - use `brew --prefix` for OPENSSL_PREFIX if available (PR#8)
+
+0.11 2018-04-16T03:16:06Z
+
+    - add dependencies with version requirement
+
+0.10 2018-04-16T01:28:22Z
+
+    - bump up version, no changes since last dev release
+
+0.02_01 2018-04-15T10:05:07Z
+
+    - add openssl_lib_paths() to get OpenSSL's library path
+    - switch to ExtUtils::MakeMaker to remove deps on Module::Build::Tiny
+
+0.01 2018-04-13T07:25:48Z
+
+    - original version
+
