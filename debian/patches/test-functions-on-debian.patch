@@ -1,0 +1,45 @@
+Description: Actually test the exported functions.
+Origin: vendor
+Forwarded: not-needed
+ And we use the values from Debian hard-coded.
+Author: gregor herrmann <gregoa@debian.org>
+Last-Update: 2022-07-11
+
+--- /dev/null
++++ b/t/functions-on-debian.t
+@@ -0,0 +1,35 @@
++#!/usr/bin/perl
++
++use strict;
++use warnings;
++use Test::More;
++
++use Crypt::OpenSSL::Guess;
++
++my $openssl_inc_paths = openssl_inc_paths();
++# diag $openssl_inc_paths;
++# -I/usr/include
++like( $openssl_inc_paths, qr|/usr/include|, "openssl_inc_paths" );
++
++my $openssl_lib_paths = openssl_lib_paths();
++# diag $openssl_lib_paths;
++# -L/usr -L/usr/lib
++like( $openssl_lib_paths, qr|/usr/lib|, "openssl_lib_paths" );
++
++my $find_openssl_prefix = find_openssl_prefix();
++# diag $find_openssl_prefix;
++# /usr
++is( $find_openssl_prefix, '/usr', "find_openssl_prefix" );
++
++my $find_openssl_exec = find_openssl_exec($find_openssl_prefix);
++# diag $find_openssl_exec;
++# /usr/bin/openssl
++is( $find_openssl_exec, '/usr/bin/openssl', "find_openssl_exec" );
++
++my ( $major, $minor, $letter ) = openssl_version();
++# diag "major: '$major', minor: '$minor', letter: '$letter'";
++# major 3.0 minor 4 letter
++isnt($major, undef, "openssl_version: \$major is defined");
++pass("openssl_version: major: '$major', minor: '$minor', letter: '$letter'");
++
++done_testing();

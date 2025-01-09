@@ -1,15 +1,31 @@
-Source: template-repository
-Section: unknown
+Source: libcrypt-openssl-guess-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: gregor herrmann <gregoa@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13)
+Build-Depends-Indep: libssl-dev,
+                     libtest-simple-perl <!nocheck>,
+                     openssl,
+                     perl
+Standards-Version: 4.6.1
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libcrypt-openssl-guess-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libcrypt-openssl-guess-perl.git
+Homepage: https://metacpan.org/release/Crypt-OpenSSL-Guess
+Rules-Requires-Root: no
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: libcrypt-openssl-guess-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         libssl-dev,
+         openssl
+Description: module for guessing OpenSSL include path
+ Crypt::OpenSSL::Guess provides helpers to guess OpenSSL include path on any
+ platform.
+ .
+ Crypt::OpenSSL::* modules should use it in their Makefile.PL.
+ .
+ In Debian Crypt::OpenSSL::Guess is packaged as some CPAN distributions
+ require it at build time.
